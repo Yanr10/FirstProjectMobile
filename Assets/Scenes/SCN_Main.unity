@@ -1882,8 +1882,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0065724, y: 1, z: 1.0216889}
+  m_Center: {x: -0.003286302, y: 0, z: 0.010844469}
 --- !u!23 &1590650941
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2350,6 +2350,22 @@ PrefabInstance:
     - target: {fileID: 6765256968119667074, guid: 940e9b8e07452244980c853257856514, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206348019103343490, guid: 940e9b8e07452244980c853257856514, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0058417
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206348019103343490, guid: 940e9b8e07452244980c853257856514, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0210462
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206348019103343490, guid: 940e9b8e07452244980c853257856514, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0029206476
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206348019103343490, guid: 940e9b8e07452244980c853257856514, type: 3}
+      propertyPath: m_Center.y
+      value: 0.010523081
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
