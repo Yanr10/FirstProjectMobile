@@ -33,7 +33,7 @@ public class ItemCollactableBase : MonoBehaviour
         OnCollect();
 
     }
-    private void HideOnObject()
+    public void HideOnObject()
     {
         gameObject.SetActive(false);
     }

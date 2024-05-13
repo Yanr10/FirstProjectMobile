@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bf2ad4a3eaa494691f2dd8a6c04a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compareTag: Player
+  compareTag: CoinCollector
   ParticleSystem: {fileID: 0}
   TimeToHide: 0
   graphicItem: {fileID: 6956030588354913879}
