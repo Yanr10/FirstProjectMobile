@@ -11,9 +11,13 @@ public class PlayerController : Singleton<PlayerController>
     public Transform target;
     public float lerpSpeed = 1f;
     public string TagToCheckEnemy = "Enemy";
-    
+    public string TagToCheckEndline = "EndLine";
+
 
     public float speed = 1f;
+
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
 
     [Header("Coin Setup")]
     public GameObject coinCollector;
@@ -29,6 +33,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canRun;
     private float _currentSpeed;
     private Vector3 _startPosition;
+    private float _baseSpeedToAnimation = 7f;
     private void Start()
     {
         _startPosition = transform.position;
@@ -53,19 +58,39 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == TagToCheckEnemy)
         {
+            //MoveBack();
+            if (!invencible) EndGame(AnimatorManager.animationType.DEAD);
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == TagToCheckEndline)
+        {
             if (!invencible) EndGame();
 
         }
     }
 
-    private void EndGame()
+
+    /*private void MoveBack()
+    {
+        transform.DOMoveZ(-1f, 3f).SetRelative();
+    }*/
+
+
+
+    private void EndGame(AnimatorManager.animationType animationType = AnimatorManager.animationType.IDLE)
     {
         _canRun = false;
         EndScreen.SetActive(true);
+        animatorManager.Play(animationType);
     }
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.animationType.RUN, _currentSpeed / _baseSpeedToAnimation);
     }
 
 
